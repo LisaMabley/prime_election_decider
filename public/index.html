@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html ng-app="presidentializer">
+  <head>
+    <meta charset="utf-8">
+    <title>Presidentializer</title>
+    <script src="angular.min.js"></script>
+    <script src="client.js"></script>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body ng-controller="ElectionController">
+    <header>
+    </header>
+    <h1>The Next (Unofficial) Leader of the World</h1>
+    <h2>Should Definitely Be Chosen At Random</h2>
+    <div class="candidateListing" ng-show="showCandidates">
+      <div class="prog">
+        <h3>Progressives</h3>
+        <ul>
+          <li ng-repeat="candidate in progList">
+            {{candidate}}
+          </li>
+        </ul>
+      </div>
+
+      <div class="cons">
+        <h3>Conservatives</h3>
+        <ul>
+          <li ng-repeat="candidate in consList">
+            {{candidate}}
+          </li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="buttons">
+
+      <button ng-click="reveal()">Reveal Candidates</button>
+      <button ng-click="decide()">Roll the Dice!</button>
+
+    </div>
+
+
+    <div ng-show="showWinner" id="winnerDisplay">
+      <h2>And the winner is: <br /> {{winner}}!!</h2>
+    </div>
+
+  </body>
+</html>
